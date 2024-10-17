@@ -13,7 +13,7 @@
   transform: translateX(0);
   transition: transform 0.3s ease;
   /* overflow: hidden; */
-  display: block;
+  /* display: block; */
 }
 
 .mobile-menu-close-M {
