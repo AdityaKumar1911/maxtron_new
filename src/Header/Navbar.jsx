@@ -55,6 +55,12 @@ const Navbar = () => {
     navigate("/"); // Redirect to the homepage
   };
 
+  // Handle hamburger menu click for mobile view
+  const handleMenuClick = (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    toggleMobileMenu();
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -74,20 +80,12 @@ const Navbar = () => {
                 {isScooterDropdownOpen && (
                   <div className="dropdown-content animated-dropdown">
                     <div className="dropnew">
-                      {/* <a href="#scooter1">Scooter Model 1</a>
-                      <a href="#scooter2">Scooter Model 2</a>
-                      <a href="#scooter3">Scooter Model 3</a>
-                      <a href="#scooter3">Scooter Model 4</a> */}
                       <ScooterData />
                     </div>
                   </div>
                 )}
               </div>
             </div>
-
-            {/* <a id="offerHide" href="#offer" className="nav-link">
-              Offer
-            </a> */}
           </>
         )}
       </div>
@@ -110,31 +108,14 @@ const Navbar = () => {
         {/* Always show this icon in both desktop and mobile views */}
         <div style={{ marginRight: "20px" }}></div>
 
-        <a href="#hdrmobmenu" className="nav-link" onClick={toggleMobileMenu}>
+        {/* Updated the hamburger icon to prevent default behavior */}
+        <div className="nav-link" onClick={handleMenuClick}>
           <i className="fas fa-bars"></i>
-        </a>
+        </div>
       </div>
 
       {/* Show MobileMenu component if on mobile view */}
       {isMobileView && isMobileMenuOpen && <MobileMenu />}
-
-      {/* Show the mobile dropdown menu content when the hamburger is clicked */}
-      {isMobileMenuOpen && !isMobileView && (
-        <div className="mobile-menu">
-          {/* Mobile menu content */}
-          <div className="mContent">
-            <Products />
-            <Menu />
-          </div>
-
-          {/* Blue backdrop at the bottom */}
-          <div className="blue-backdrop"></div>
-
-          <button onClick={toggleMobileMenu} className="mobile-menu-close">
-            &times;
-          </button>
-        </div>
-      )}
     </nav>
   );
 };

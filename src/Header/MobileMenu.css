@@ -12,7 +12,8 @@
   z-index: 9999;
   transform: translateX(0);
   transition: transform 0.3s ease;
-  overflow: hidden;
+  /* overflow: hidden; */
+  display: block;
 }
 
 .mobile-menu-close-M {
