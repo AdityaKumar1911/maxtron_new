@@ -1,0 +1,36 @@
+.carousel .thumbs-wrapper {
+  display: none;
+}
+.carousel-status {
+  display: none;
+}
+.carousel img {
+  /* width: 100%;
+  display: inline-block;
+  pointer-events: none;
+  height: fit-content; */
+  /* overflow: hidden; */
+  height: calc(100vh - 53px);
+  object-fit: cover;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+.carousel-slider {
+  /* height: calc(100vh - 53px); */
+  object-fit: cover;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+.control-dots {
+  margin-bottom: 28px !important;
+}
+@media (max-width: 768px) {
+  .carousel-slider {
+    height: auto;
+  }
+  .carousel img {
+    height: auto;
+    object-fit: contain;
+  }
+}
