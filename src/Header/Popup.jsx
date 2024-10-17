@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Popup.css"; // External CSS for the popup
+import Qr from "../images/qr.png";
 
 const Popup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,12 +28,18 @@ const Popup = () => {
               &times;
             </span>
             <img
-              src="/path-to-your-image.png" // Replace with the correct path to your image
-              alt="Popup Ad"
-              className="popup-image"
-            />
+              src={Qr}
+              alt="QR Code"
+              className="qr-code"
+              style={{
+                width: "200px",
+              }}
+            />{" "}
+            {/* Use the imported QR code */}
             <p>Join our WhatsApp channel for updates!</p>
-            <button className="join-btn">Join Now</button>
+            <button className="join-btn">
+              <a href="https://wa.me/8888888888">Join Now</a>
+            </button>
           </div>
         </div>
       )}

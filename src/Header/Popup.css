@@ -22,6 +22,9 @@
   max-width: 400px;
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Close Button */
@@ -61,5 +64,6 @@
   .popup-content {
     width: 100%;
     padding: 10px;
+    margin: 40px;
   }
 }
