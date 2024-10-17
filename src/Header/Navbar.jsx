@@ -105,6 +105,11 @@ const Navbar = () => {
         )}
 
         {/* Always show this icon in both desktop and mobile views */}
+        <div style={{ marginRight: "20px" }}>
+          <a href="/testride" className="nav-link" style={{ color: "#00e676" }}>
+            Test Ride
+          </a>
+        </div>
         <a href="#hdrmobmenu" className="nav-link" onClick={toggleMobileMenu}>
           <i className="fas fa-bars"></i>
         </a>
