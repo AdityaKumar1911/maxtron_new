@@ -139,11 +139,19 @@ body {
 
   .tabs {
     flex-wrap: wrap;
+    gap: 20px;
   }
 
   .scooter-image img {
     width: 100%;
     height: auto;
+  }
+  .scooter-imageBooking {
+    min-height: auto;
+  }
+
+  .scooter-details {
+    width: -webkit-fill-available;
   }
 }
 

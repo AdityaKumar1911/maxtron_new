@@ -22,7 +22,7 @@ const Header = () => {
             <p>
               Upgrade to India's #1 EV at just ₹74,999.
               <b>
-                <a href="#">Test ride now.</a>
+                <a href="/testride">Test ride now.</a>
               </b>
             </p>
             <img

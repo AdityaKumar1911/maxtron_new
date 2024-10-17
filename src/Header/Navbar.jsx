@@ -41,10 +41,13 @@ const Navbar = () => {
   useEffect(() => {
     // Disable scroll when mobile menu is open
     if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "auto";
     } else {
       document.body.style.overflow = "auto";
     }
+    return () => {
+      document.body.style.overflow = "auto"; // Ensure scroll is reset on unmount or when menu closes
+    };
   }, [isMobileMenuOpen]);
 
   // Function to handle logo click and navigate to home
