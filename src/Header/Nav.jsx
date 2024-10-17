@@ -5,10 +5,10 @@ import "./Nav.css";
 
 // Import your images manually
 import M3Banner from "../images/Website Banner1 copy.jpg"; // Replace with your actual image file name
-import scooter2 from "../images/Website Banner2 copy.jpg"
- // Add other images here
+import scooter2 from "../images/Website Banner2 copy.jpg";
+// Add other images here
 
- // Importing images Mobile View
+// Importing images Mobile View
 import MobileBanner1 from "../images/Website MobileView Banner1 copy.jpg";
 import MobileBanner2 from "../images/Website MobileView Banner2 copy.jpg";
 
@@ -29,17 +29,12 @@ function App() {
   }, []);
 
   // Desktop images (imported manually)
-  const desktopImages = [
-    M3Banner,
-    scooter2,
-    // scooter3,
-  ];
+  const desktopImages = [M3Banner, scooter2];
 
   // Mobile images (imported manually or use separate mobile-optimized images if available)
   const mobileImages = [
     MobileBanner1, // Assuming you have separate mobile versions
-    MobileBanner2, 
-    // scooter3,
+    MobileBanner2,
   ];
 
   // Choose the appropriate set of images based on the screen size
@@ -52,8 +47,12 @@ function App() {
         showStatus={false} // Remove status indicator
         showIndicators={true} // Control dots
         infiniteLoop={true} // Loop infinitely
-        axis="horizontal" // Horizontal sliding
         autoPlay={false} // Disable autoplay (optional)
+        swipeable={true} // Enable swiping
+        emulateTouch={true} // Emulate touch on non-touch devices
+        axis="horizontal" // Horizontal sliding only
+        preventMovementUntilSwipeScrollTolerance={true} // Prevent accidental slides
+        swipeScrollTolerance={50} // Adjust tolerance to avoid triggering slide on small vertical movements
       >
         {imagesToDisplay.map((imageSrc, index) => (
           <div className="slide" key={index}>
