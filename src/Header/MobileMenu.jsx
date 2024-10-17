@@ -12,8 +12,6 @@ const MobileMenu = () => {
   const [isCompanyOpen, setCompanyOpen] = useState(false);
   const [isTechOpen, setTechOpen] = useState(false);
   const [isOwnershipOpen, setOwnershipOpen] = useState(false);
-  const [isBookNowOpen, setBookNowOpen] = useState(false);
-  const [isTestOpen, setTestOpen] = useState(false); // Define state for Test Ride section
 
   // Toggles
   const toggleScooters = () => setScootersOpen(!isScootersOpen);
@@ -22,8 +20,6 @@ const MobileMenu = () => {
   const toggleCompany = () => setCompanyOpen(!isCompanyOpen);
   const toggleTech = () => setTechOpen(!isTechOpen);
   const toggleOwnership = () => setOwnershipOpen(!isOwnershipOpen);
-  const toggleBookNow = () => setBookNowOpen(!isBookNowOpen);
-  const toggleTest = () => setTestOpen(!isTestOpen); // Properly toggle Test Ride section
 
   // Function to close the menu
   const closeMenu = () => setMenuOpen(false);
@@ -104,25 +100,6 @@ const MobileMenu = () => {
         <div className="menu-header" onClick={toggleOwnership}>
           <a href="/dealer">Dealership</a>
         </div>
-      </div>
-
-      <div className="menu-section">
-        <div className="menu-header" onClick={toggleBookNow}>
-          <a href="/sbooking">Book Now</a>
-        </div>
-      </div>
-
-      <div className="menu-section">
-        <div className="menu-header" onClick={toggleTest}>
-          Test Ride
-        </div>
-        {isTestOpen && (
-          <ul className="menu-list">
-            <li>
-              <a href="/testride">Schedule Test Ride</a>
-            </li>
-          </ul>
-        )}
       </div>
 
       {/* Footer Buttons */}
