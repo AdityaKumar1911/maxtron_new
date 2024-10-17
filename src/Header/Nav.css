@@ -34,3 +34,7 @@
     object-fit: contain;
   }
 }
+
+.carousel.carousel-slider {
+  overflow: auto !important;
+}
