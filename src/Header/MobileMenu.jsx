@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MobileMenu.css"; // Import your CSS for mobile styling
 
 const MobileMenu = () => {
@@ -25,8 +25,23 @@ const MobileMenu = () => {
   const toggleBookNow = () => setBookNowOpen(!isBookNowOpen);
   const toggleTest = () => setTestOpen(!isTestOpen); // Properly toggle Test Ride section
 
-  // Function to close the menu
-  const closeMenu = () => setMenuOpen(false);
+  // Function to close the menu and restore scrolling
+  const closeMenu = () => {
+    setMenuOpen(false);
+    document.body.style.overflow = "auto"; // Re-enable scrolling when menu closes
+  };
+
+  useEffect(() => {
+    // Disable scrolling when the menu is open
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    }
+
+    // Cleanup function to ensure scrolling is restored if the component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
 
   if (!isMenuOpen) return null; // If menu is closed, return nothing
 

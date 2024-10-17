@@ -41,13 +41,10 @@ const Navbar = () => {
   useEffect(() => {
     // Disable scroll when mobile menu is open
     if (isMobileMenuOpen) {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-    return () => {
-      document.body.style.overflow = "auto"; // Ensure scroll is reset on unmount or when menu closes
-    };
   }, [isMobileMenuOpen]);
 
   // Function to handle logo click and navigate to home
@@ -74,20 +71,12 @@ const Navbar = () => {
                 {isScooterDropdownOpen && (
                   <div className="dropdown-content animated-dropdown">
                     <div className="dropnew">
-                      {/* <a href="#scooter1">Scooter Model 1</a>
-                      <a href="#scooter2">Scooter Model 2</a>
-                      <a href="#scooter3">Scooter Model 3</a>
-                      <a href="#scooter3">Scooter Model 4</a> */}
                       <ScooterData />
                     </div>
                   </div>
                 )}
               </div>
             </div>
-
-            {/* <a id="offerHide" href="#offer" className="nav-link">
-              Offer
-            </a> */}
           </>
         )}
       </div>
@@ -115,26 +104,8 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Show MobileMenu component if on mobile view */}
+      {/* Show MobileMenu component only if on mobile view */}
       {isMobileView && isMobileMenuOpen && <MobileMenu />}
-
-      {/* Show the mobile dropdown menu content when the hamburger is clicked */}
-      {isMobileMenuOpen && !isMobileView && (
-        <div className="mobile-menu">
-          {/* Mobile menu content */}
-          <div className="mContent">
-            <Products />
-            <Menu />
-          </div>
-
-          {/* Blue backdrop at the bottom */}
-          <div className="blue-backdrop"></div>
-
-          <button onClick={toggleMobileMenu} className="mobile-menu-close">
-            &times;
-          </button>
-        </div>
-      )}
     </nav>
   );
 };
