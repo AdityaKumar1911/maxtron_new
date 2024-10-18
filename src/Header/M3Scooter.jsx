@@ -19,6 +19,7 @@ import {
   Layers,
   Bolt,
 } from "lucide-react";
+import M3img from "../images/Product Image copy M3.jpg";
 
 const ExploreMorePage = () => {
   const [activeTab, setActiveTab] = useState("keyFeatures"); // For tab management
@@ -44,9 +45,10 @@ const ExploreMorePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div>
               <img
-                src="https://via.placeholder.com/600x400"
+                src={M3img}
                 alt="EV Scooter Pro"
                 className="rounded-lg shadow-lg"
+                style={{ width: "600px", height: "400px", objectFit: "cover" }}
               />
             </div>
             <div className="flex flex-col justify-center">
