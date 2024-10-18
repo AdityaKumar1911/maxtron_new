@@ -7,7 +7,7 @@ export default function AboutUs() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full">
         <img
-          src="https://fujiyamaev.com/wp-content/uploads/2024/08/Fujiyama-Website-Banner2-copy-2.jpg"
+          src="https://c8.alamy.com/comp/2A2T6M6/3d-rendering-electric-scooter-banner-2A2T6M6.jpg"
           alt="Electric scooters on a city street"
           className="brightness-50 object-cover w-full h-full"
         />
