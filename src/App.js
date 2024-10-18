@@ -19,35 +19,48 @@ import M2Scooter from "./Header/M2Scooter";
 import M3Scooter from "./Header/M3Scooter";
 import M4Scooter from "./Header/M4Scooter";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
+// Define a Layout component to conditionally render the footer
+function Layout({ children }) {
+  const location = useLocation(); // Get the current location
+  return (
+    <>
+      <OfferAdd />
+      <Navbar />
+      {children}
+      {/* Conditionally render the Footer only if the current path is not /dealer */}
+      {location.pathname !== "/dealer" && <Footer />}
+    </>
+  );
+}
 
 function App() {
   return (
     <div style={{ overflow: "hidden" }}>
-      {/* Wrap your app with Router */}
       <Router>
-        {/* Add components that appear on all routes */}
-        <OfferAdd />
-        <Navbar />
-
-        {/* Define your routes */}
-        <Routes>
-          {/* Define the paths and the components to render */}
-          <Route path="/" element={<AllPage />} />
-          <Route path="/testride" element={<TestRideForm />} />
-          <Route path="/dealer" element={<DealerPage />} />
-          <Route path="/m1" element={<M1Scooter />} />
-          <Route path="/m2" element={<M2Scooter />} />
-          <Route path="/m3" element={<M3Scooter />} />
-          <Route path="/m4" element={<M4Scooter />} />
-          <Route path="/sbooking" element={<ScooterBooking />} />
-          <Route path="/scooterdata" element={<ScooterData />} />
-          <Route path="/blogpageall" element={<BlogPageAll />} />
-          <Route path="/aboutus" element={<AboutUsFullPage />} />
-          <Route path="/whyfull" element={<WhyFull />} />
-          {/* Add more routes as needed */}
-        </Routes>
-        <Footer />
+        <Layout>
+          {/* Define your routes */}
+          <Routes>
+            <Route path="/" element={<AllPage />} />
+            <Route path="/testride" element={<TestRideForm />} />
+            <Route path="/dealer" element={<DealerPage />} />
+            <Route path="/m1" element={<M1Scooter />} />
+            <Route path="/m2" element={<M2Scooter />} />
+            <Route path="/m3" element={<M3Scooter />} />
+            <Route path="/m4" element={<M4Scooter />} />
+            <Route path="/sbooking" element={<ScooterBooking />} />
+            <Route path="/scooterdata" element={<ScooterData />} />
+            <Route path="/blogpageall" element={<BlogPageAll />} />
+            <Route path="/aboutus" element={<AboutUsFullPage />} />
+            <Route path="/whyfull" element={<WhyFull />} />
+          </Routes>
+        </Layout>
       </Router>
     </div>
   );

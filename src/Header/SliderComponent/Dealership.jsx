@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; // Added useEffect here
 import "./Dealership.css";
 import {
   FaBatteryFull,
@@ -7,12 +7,25 @@ import {
   FaMobileAlt,
   FaStream,
 } from "react-icons/fa";
+import WhatsAppPopup from "./WhatsAppPopupD";
 
 const DealerProgramPage = () => {
-  const [showForm, setShowForm] = useState(false); // Manage form visibility
+  const [showForm, setShowForm] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleFormToggle = () => {
-    setShowForm((prevShowForm) => !prevShowForm); // Toggle form visibility
+    setShowForm((prevShowForm) => !prevShowForm);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const closePopup = () => {
+    setShowPopup(false);
   };
 
   const usps = [
@@ -32,7 +45,7 @@ const DealerProgramPage = () => {
       description: ` Equipped with advanced smart connectivity features, Maxtron electric vehicles
       allow riders to seamlessly connect their devices for navigation, entertainment,
       and real-time vehicle monitoring, enhancing the overall riding experience and
-      convenience`,
+      convenience.`,
     },
     {
       id: 3,
@@ -49,8 +62,7 @@ contributing to a cleaner environment.`,
       title: "Best-in-Class Safety",
       description: `Maxtron prioritizes rider safety with a comprehensive suite of advanced safety
 features, including collision prevention systems, anti-lock braking, and stability
-control, providing riders with peace of mind and confidence on the road.
-`,
+control, providing riders with peace of mind and confidence on the road.`,
     },
     {
       id: 5,
@@ -64,6 +76,10 @@ functionality and making a bold statement on the streets.`,
 
   return (
     <div className="dealer-program-page">
+      {/* Show the popup conditionally */}
+      {/* {showPopup && <WhatsAppPopup closePopup={closePopup} />} */}
+
+      {/* Rest of your DealerProgramPage content */}
       {/* Unique Selling Proposition Section */}
       <section className="usp-section">
         <h2 className="usp-title">Unique Selling Proposition</h2>
@@ -76,53 +92,6 @@ functionality and making a bold statement on the streets.`,
             </div>
           ))}
         </div>
-      </section>
-
-      {/* Maxtron Dealer Program Section */}
-      <section className="dealer-program-section">
-        <h2 className="section-title">
-          Maxtron Dealer Program: Seize the Electric Revolution!
-        </h2>
-        <p style={{ textAlign: "center" }}>
-          Expand your business with Maxtron, a pioneer in electric mobility.
-          Join us today to explore growth opportunities in the dynamic electric
-          vehicle industry.
-        </p>
-
-        {/* Add Button for Opening Dealership Form */}
-        <button className="btn-open-form" onClick={handleFormToggle}>
-          Join the Maxtron Dealer Program
-        </button>
-
-        {/* Conditionally Render the Form */}
-        {showForm && (
-          <div className="dealership-form">
-            <h3>Dealership Application Form</h3>
-            <form>
-              <label>
-                Full Name:
-                <input type="text" placeholder="Enter your full name" />
-              </label>
-              <label>
-                Email:
-                <input type="email" placeholder="Enter your email" />
-              </label>
-              <label>
-                Phone Number:
-                <input type="tel" placeholder="Enter your phone number" />
-              </label>
-              <label>
-                Business Name:
-                <input type="text" placeholder="Enter your business name" />
-              </label>
-              <label>
-                Location:
-                <input type="text" placeholder="Enter your business location" />
-              </label>
-              <button type="submit">Submit Application</button>
-            </form>
-          </div>
-        )}
       </section>
 
       {/* Why Partner with Maxtron Section */}
@@ -214,6 +183,52 @@ functionality and making a bold statement on the streets.`,
             <strong>Brand Recognition</strong>
             <p>Associate your business with Maxtron’s leading brand in EVs.</p>
           </div>
+        </div>
+      </section>
+
+      {/* Maxtron Dealer Program Section */}
+      <section className="dealer-program-section">
+        <h2 className="section-title">
+          Maxtron Dealer Program: Seize the Electric Revolution!
+        </h2>
+        <p style={{ textAlign: "center" }}>
+          Expand your business with Maxtron, a pioneer in electric mobility.
+          Join us today to explore growth opportunities in the dynamic electric
+          vehicle industry.
+        </p>
+
+        {/* Add Button for Opening Dealership Form */}
+        <button className="btn-open-form">
+          Join the Maxtron Dealer Program
+        </button>
+
+        {/* Conditionally Render the Form */}
+
+        <div className="dealership-form">
+          <h3>Dealership Application Form</h3>
+          <form>
+            <label>
+              Full Name:
+              <input type="text" placeholder="Enter your full name" />
+            </label>
+            <label>
+              Email:
+              <input type="email" placeholder="Enter your email" />
+            </label>
+            <label>
+              Phone Number:
+              <input type="tel" placeholder="Enter your phone number" />
+            </label>
+            <label>
+              Business Name:
+              <input type="text" placeholder="Enter your business name" />
+            </label>
+            <label>
+              Location:
+              <input type="text" placeholder="Enter your business location" />
+            </label>
+            <button type="submit">Submit Application</button>
+          </form>
         </div>
       </section>
     </div>
