@@ -20,7 +20,7 @@ const ContactUs = () => {
               active={activeTab === "general"}
               onClick={() => handleTabClick("general")}
             >
-              General Inquiry
+              Become a Dealer
             </Tab>
             <Tab
               active={activeTab === "partnerships"}
@@ -39,7 +39,7 @@ const ContactUs = () => {
           <FormContainer>
             {activeTab === "general" && (
               <ContactForm>
-                <FormTitle>General Inquiry</FormTitle>
+                <FormTitle>Become a Dealer</FormTitle>
                 <Input placeholder="Name" />
                 <Input placeholder="Email" type="email" />
                 <Textarea placeholder="Your Message" />

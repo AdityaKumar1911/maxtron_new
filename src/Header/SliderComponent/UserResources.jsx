@@ -49,7 +49,7 @@ const UserResources = () => {
     <ResourcesWrapper>
       <SectionTitle>User Resources</SectionTitle>
 
-      <Section>
+      {/* <Section>
         <SubTitle>User Manuals</SubTitle>
         <ManualsContainer>
           {manuals.map((manual) => (
@@ -61,7 +61,7 @@ const UserResources = () => {
             </ManualCard>
           ))}
         </ManualsContainer>
-      </Section>
+      </Section> */}
 
       <Section>
         <SubTitle>Maintenance Tips</SubTitle>
