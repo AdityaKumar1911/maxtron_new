@@ -23,7 +23,7 @@ const scooterData = [
     highlights: [
       {
         label: "Motor Type",
-        value: "Brushless Hub Motor",
+        value: "Brushless 800W Hub Motor",
         icon: <FaMotorcycle />,
       },
       { label: "Climbing Capacity", value: "17 degrees", icon: <FaRoad /> },
@@ -42,7 +42,7 @@ const scooterData = [
     highlights: [
       {
         label: "Motor Type",
-        value: "Brushless Hub Motor",
+        value: "Brushless 800W Hub Motor",
         icon: <FaMotorcycle />,
       },
       { label: "Climbing Capacity", value: "20 degrees", icon: <FaRoad /> },
@@ -61,7 +61,7 @@ const scooterData = [
     highlights: [
       {
         label: "Motor Type",
-        value: "Brushless Hub Motor",
+        value: "Brushless 800W Hub Motor",
         icon: <FaMotorcycle />,
       },
       { label: "Climbing Capacity", value: "17 degrees", icon: <FaRoad /> },
