@@ -47,12 +47,15 @@ function App() {
         showStatus={false} // Remove status indicator
         showIndicators={true} // Control dots
         infiniteLoop={true} // Loop infinitely
-        autoPlay={false} // Disable autoplay (optional)
+        autoPlay={true} // Enable auto-slide on both mobile and desktop
+        interval={5000} // Slide every 5 seconds
         swipeable={true} // Enable swiping
         emulateTouch={true} // Emulate touch on non-touch devices
         axis="horizontal" // Horizontal sliding only
         preventMovementUntilSwipeScrollTolerance={true} // Prevent accidental slides
         swipeScrollTolerance={50} // Adjust tolerance to avoid triggering slide on small vertical movements
+        stopOnHover={false} // Prevent pausing on hover
+        autoFocus={true} // Maintain focus for continuous auto-slide
       >
         {imagesToDisplay.map((imageSrc, index) => (
           <div className="slide" key={index}>
