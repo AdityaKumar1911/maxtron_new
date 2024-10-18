@@ -78,12 +78,16 @@ const scooterData = [
     title: "M4 Scooter",
     image: ImageM4,
     highlights: [
-      { label: "Motor Type", value: "800W Hub Motor", icon: <FaMotorcycle /> },
+      {
+        label: "Motor Type",
+        value: " Brushless 800W Hub Motor",
+        icon: <FaMotorcycle />,
+      },
       { label: "Climbing Capacity", value: "17 degrees", icon: <FaRoad /> },
       { label: "Max Speed", value: "45 km/h", icon: <FaTachometerAlt /> },
       {
         label: "Key Features",
-        value: "USB Charging, Anti-theft Alarm",
+        value: "USB Charging, LED light, Anti-theft Alarm",
         icon: <FaRegLightbulb />,
       },
     ],
