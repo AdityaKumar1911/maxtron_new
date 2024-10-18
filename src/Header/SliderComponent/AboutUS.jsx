@@ -164,7 +164,7 @@ const Header = styled.header`
 `;
 
 const Highlight = styled.span`
-  background: linear-gradient(90deg, #ff7f50 0%, #ff4500 100%);
+  background: #00e676;
   padding: 0 15px;
   border-radius: 5px;
   color: white;
